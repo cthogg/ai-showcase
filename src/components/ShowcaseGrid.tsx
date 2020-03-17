@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import AIList from "./AIList";
+import AgentList from "./AgentList";
 import { FEAgent } from "../types";
 import SelectedAgentsTable from "./SelectedAgentsTable";
 import { Grid } from "@material-ui/core";
@@ -17,7 +17,7 @@ const ShowCaseGrid: React.FunctionComponent<ShowCaseGridProps> = ({
     <>
       <Grid container>
         <Grid item xs={4}>
-          <AIList agents={agents} selectFunction={setSelectedAgents} />
+          <AgentList agents={agents} selectFunction={setSelectedAgents} />
         </Grid>
         <Grid item>
           {selectedAgents.length > 0 && (

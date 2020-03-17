@@ -6,7 +6,7 @@ import ListItemText from "@material-ui/core/ListItemText";
 import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
 import React from "react";
 import { FEAgent } from "../types";
-interface AIListProps {
+interface AgentListProps {
   agents: FEAgent[];
   selectFunction: Function;
 }
@@ -21,10 +21,10 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-const AIList: React.FunctionComponent<AIListProps> = ({
+const AgentList: React.FunctionComponent<AgentListProps> = ({
   agents,
   selectFunction
-}: AIListProps): JSX.Element => {
+}: AgentListProps): JSX.Element => {
   const classes = useStyles();
   const [checked, setChecked] = React.useState([0]);
   const handleToggle = (value: number) => () => {
@@ -98,4 +98,4 @@ const AIList: React.FunctionComponent<AIListProps> = ({
   );
 };
 
-export default AIList;
+export default AgentList;

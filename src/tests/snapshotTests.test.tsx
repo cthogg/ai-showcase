@@ -1,7 +1,7 @@
 import React from "react";
 import renderer from "react-test-renderer";
 import ShowCaseGrid from "../components/ShowcaseGrid";
-import { mockSelectedAgents } from "../mocks/mockSelectedAgents";
+import { mockSelectedAgents } from "../mocks/agents";
 import SelectedAgentsTable from "../components/SelectedAgentsTable";
 
 it("renders multiple questions correctly", () => {
