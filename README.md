@@ -1,44 +1,35 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# AI Showcase and Comparison Tool
 
-## Available Scripts
+A simple AI tool
 
-In the project directory, you can run:
+## How to Run
 
-### `npm start`
+- install frontend `npm i`
+- run locally `npm start`
+- frontend will be found at `http://localhost:3000/`
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Requirements
+- node v12.13.1 (npm v6.12.1)
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
 
-### `npm test`
+## User Stories
+- Given a working api, when the users accesses the website, then the user can see a list with 1) the name of ai 2) a short description 
+- Given a working API, When the user accesses the website then the user can see the average task score for each category of tasks (e.g. memory, logic, planning). 
+- Given the api throws an error message, when the user visits the page, then the user can see an error message. 
+- Given two or more AIs are available from the api, when the user selects two AIs then a comparison is shown. 
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Requirements
+- You are expected to spend about 2 hours or less on this project. 
+- The solution must be a single​ page web application. That means one index.html file. 
+- The solution must be written in TypeScript, JavaScript or Flow (not Elm, PureScript or others). 
+- The solution may use any framework (we mainly use Angular/TypeScript). 
+- The solution should run on modern browsers. 
+- The solution should reasonably respond to different desktop/laptop window sizes, but doesn’t need to be optimised for tablet or mobile. 
+- The code written should be written with scalability in mind (e.g. will you be able to add new requirements later on without difficulty, etc.) 
+- The solution should look good. You do not need to be an artist or graphic designer, but your design skills should be good enough to ensure the site has a consistent look with some degree of imagination involved. 
+- Unit tests are not required but the solution should be testable & code should be easily readable / documented.
 
-### `npm run build`
+## Next Steps
+If I had more time I would do the following:
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Design Philosophy
