@@ -2,15 +2,15 @@
 
 A simple AI tool
 
-## How to Run
-
-- install frontend `npm i`
-- run locally `npm start`
-- frontend will be found at `http://localhost:3000/`
-
 ## Requirements
 
 - node v12.13.1 (npm v6.12.1)
+
+## How to Run
+
+- install dependencies `npm i`
+- run locally `npm start`
+- frontend will be found at `http://localhost:3000/`
 
 ## User Stories
 
@@ -24,7 +24,7 @@ A simple AI tool
 If I had more time I would do the following:
 
 1. I feel that the "Agent Overview" and "Agent Comparison" sections have been merged into the same view. This works for now, but as the complexity of the application grows, this may have to be split apart.
-1. Sort out the parts where I added a ts-ignore or TODO or FIXME. These moslty involve catching errors when things are not found, and it assumes that there are only three categories (these three categories are hard coded at the moment). I feel that technical debt is OK sometimes, so long as it is documented.
+1. Sort out the parts where I added a ts-ignore or TODO or FIXME. These moslty involve catching errors when things are not found, and it assumes that there are only three categories (these three categories are hard coded at the moment). I feel that technical debt is sometimes allowed in order to move the project forward, so long as it is documented, and does not impact highly on the structure of the application.
 1. Connect the data in the ShowcaseGrid to the Charts component since at the moment the data is currently hard coded.
 1. Add a loading spinner when the data is loading.
 1. instead of having an alert make the errors popup as a toast or add a React Error Boundary.
