@@ -27,19 +27,31 @@ const AIList: React.FunctionComponent<AIListProps> = ({
 }: AIListProps): JSX.Element => {
   const classes = useStyles();
   const [checked, setChecked] = React.useState([0]);
-
   const handleToggle = (value: number) => () => {
     const currentIndex = checked.indexOf(value);
     const newChecked = [...checked];
-
+    const getAgentsFromChecked = (checkedIds: number[]): FEAgent[] => {
+      const checkedAgents: FEAgent[] = checkedIds
+        .filter(c => c !== 0)
+        .map(c => {
+          console.log("c", c);
+          //@ts-ignore
+          const foundAgent: FEAgent = agents.find(a => a.id === c);
+          return foundAgent;
+        });
+      return checkedAgents;
+    };
     if (currentIndex === -1) {
-      newChecked.push(value);
+      if (newChecked.length >= 3) {
+        alert("please selected two or fewer to compare");
+      } else {
+        newChecked.push(value);
+      }
     } else {
       newChecked.splice(currentIndex, 1);
     }
-
+    selectFunction(getAgentsFromChecked(newChecked));
     setChecked(newChecked);
-    selectFunction(agents.find(a => a.id === value));
   };
 
   const createStatisticsFromAgent = (agent: FEAgent): string => {
