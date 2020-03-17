@@ -34,7 +34,7 @@ const categoryAverage = (row: FEAgent, allCategories: string[]) =>
     // escapte the category
     return (
       <TableCell key={c} align="right">
-        {statsForCategory?.statistics.averageMean}
+        {statsForCategory?.statistics.averageMean.toFixed(1)}
       </TableCell>
     );
   });

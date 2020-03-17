@@ -6,6 +6,7 @@ import ListItemText from "@material-ui/core/ListItemText";
 import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
 import React from "react";
 import { FEAgent } from "../types";
+import { Typography } from "@material-ui/core";
 interface AgentListProps {
   agents: FEAgent[];
   selectFunction: Function;
@@ -42,7 +43,7 @@ const AgentList: React.FunctionComponent<AgentListProps> = ({
     };
     if (currentIndex === -1) {
       if (newChecked.length >= 3) {
-        alert("please selected two or fewer to compare");
+        alert("please select two or fewer agents to compare");
       } else {
         newChecked.push(value);
       }
@@ -51,15 +52,6 @@ const AgentList: React.FunctionComponent<AgentListProps> = ({
     }
     selectFunction(getAgentsFromChecked(newChecked));
     setChecked(newChecked);
-  };
-
-  const createStatisticsFromAgent = (agent: FEAgent): string => {
-    const categoryString: string = agent.statistics.categories
-      .map(cat => {
-        return `${cat.category}, ${cat.statistics.averageMean}`;
-      })
-      .join("");
-    return categoryString;
   };
 
   return (
@@ -86,10 +78,18 @@ const AgentList: React.FunctionComponent<AgentListProps> = ({
             </ListItemIcon>
             <ListItemText
               id={labelId}
-              primary={`${agent.name}`}
-              secondary={`${agent.description}  ${createStatisticsFromAgent(
-                agent
-              )}`}
+              primary={
+                <React.Fragment>
+                  <Typography variant="body1">{`${agent.name}`}</Typography>
+                </React.Fragment>
+              }
+              secondary={
+                <React.Fragment>
+                  <Typography variant="body2">
+                    <em> {`${agent.description}`} </em>
+                  </Typography>
+                </React.Fragment>
+              }
             />
           </ListItem>
         );

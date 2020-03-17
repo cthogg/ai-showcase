@@ -64,19 +64,19 @@ exports[`renders agents table correctly 1`] = `
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
         >
-          33
+          33.0
         </td>
         <td
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
         >
-          100
+          100.0
         </td>
         <td
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
         >
-          86
+          86.0
         </td>
       </tr>
       <tr
@@ -93,19 +93,19 @@ exports[`renders agents table correctly 1`] = `
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
         >
-          79
+          79.0
         </td>
         <td
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
         >
-          72
+          72.0
         </td>
         <td
           aria-sort={null}
           className="MuiTableCell-root MuiTableCell-body MuiTableCell-alignRight"
         >
-          32.666666666666664
+          32.7
         </td>
       </tr>
     </tbody>
@@ -192,12 +192,24 @@ exports[`renders multiple questions correctly 1`] = `
           <span
             className="MuiTypography-root MuiListItemText-primary MuiTypography-body2"
           >
-            AlphaZero
+            <p
+              className="MuiTypography-root MuiTypography-body1"
+            >
+              AlphaZero
+            </p>
           </span>
           <p
             className="MuiTypography-root MuiListItemText-secondary MuiTypography-body2 MuiTypography-colorTextSecondary"
           >
-            Generalisation of AlphaGo Zero that can achieve, tabula rasa, superhuman performance in many challenging domains such as Chess, Shogi and Go.  memory, 33planning, 100logic, 86
+            <p
+              className="MuiTypography-root MuiTypography-body2"
+            >
+              <em>
+                 
+                Generalisation of AlphaGo Zero that can achieve, tabula rasa, superhuman performance in many challenging domains such as Chess, Shogi and Go.
+                 
+              </em>
+            </p>
           </p>
         </div>
       </div>
@@ -270,12 +282,24 @@ exports[`renders multiple questions correctly 1`] = `
           <span
             className="MuiTypography-root MuiListItemText-primary MuiTypography-body2"
           >
-            R2D3
+            <p
+              className="MuiTypography-root MuiTypography-body1"
+            >
+              R2D3
+            </p>
           </span>
           <p
             className="MuiTypography-root MuiListItemText-secondary MuiTypography-body2 MuiTypography-colorTextSecondary"
           >
-            Making Efficient Use of Demonstrations to Solve Hard Exploration Problems.  memory, 79planning, 72logic, 32.666666666666664
+            <p
+              className="MuiTypography-root MuiTypography-body2"
+            >
+              <em>
+                 
+                Making Efficient Use of Demonstrations to Solve Hard Exploration Problems.
+                 
+              </em>
+            </p>
           </p>
         </div>
       </div>
