@@ -1,7 +1,7 @@
 // I find separating the backend from frontend types are useful if they are kept in separate repositories
 type AgentId = number;
 
-export interface Agent {
+export interface BEAgent {
   readonly id: AgentId;
   readonly name: string;
   readonly description: string;

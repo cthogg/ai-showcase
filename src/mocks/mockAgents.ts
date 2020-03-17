@@ -1,7 +1,7 @@
-import { Agent } from "../types";
+import { BEAgent } from "../types";
 
 //@ts-ignore
-export const AGENTS: Agent[] = [
+export const AGENTS: BEAgent[] = [
   {
     id: 1,
     name: "IMPALA",
