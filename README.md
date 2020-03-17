@@ -18,6 +18,14 @@ A simple AI tool
 - Given the api throws an error message, when the user visits the page, then the user can see an error message. 
 - Given two or more AIs are available from the api, when the user selects two AIs then a comparison is shown. 
 
+## Components
+- Simple App bar
+- List Item
+- Simple List
+- Comparison Card
+- Table for Comparison
+- Graph for comparison 
+
 ## Requirements
 - You are expected to spend about 2 hours or less on this project. 
 - The solution must be a single​ page web application. That means one index.html file. 
@@ -27,7 +35,7 @@ A simple AI tool
 - The solution should reasonably respond to different desktop/laptop window sizes, but doesn’t need to be optimised for tablet or mobile. 
 - The code written should be written with scalability in mind (e.g. will you be able to add new requirements later on without difficulty, etc.) 
 - The solution should look good. You do not need to be an artist or graphic designer, but your design skills should be good enough to ensure the site has a consistent look with some degree of imagination involved. 
-- Unit tests are not required but the solution should be testable & code should be easily readable / documented.
+- Unit tests are not required but the solution should be testable & code should be easily readable / documented
 
 ## Next Steps
 If I had more time I would do the following:
