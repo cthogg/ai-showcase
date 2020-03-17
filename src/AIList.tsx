@@ -8,6 +8,7 @@ import React from "react";
 import { FEAgent } from "./types";
 interface AIListProps {
   agents: FEAgent[];
+  selectFunction: Function;
 }
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -21,7 +22,8 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 const AIList: React.FunctionComponent<AIListProps> = ({
-  agents
+  agents,
+  selectFunction
 }: AIListProps): JSX.Element => {
   const classes = useStyles();
   const [checked, setChecked] = React.useState([0]);
@@ -37,6 +39,7 @@ const AIList: React.FunctionComponent<AIListProps> = ({
     }
 
     setChecked(newChecked);
+    selectFunction(agents.find(a => a.id === value));
   };
 
   const createStatisticsFromAgent = (agent: FEAgent): string => {
