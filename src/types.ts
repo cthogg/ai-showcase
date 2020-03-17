@@ -1,6 +1,13 @@
 // I find separating the backend from frontend types are useful if they are kept in separate repositories
 type AgentId = number;
 
+export interface Agent {
+  readonly id: AgentId;
+  readonly name: string;
+  readonly description: string;
+  readonly tasks: FETask[];
+}
+
 export interface Statistics {
   averageMean: number;
 }

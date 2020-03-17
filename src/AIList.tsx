@@ -8,8 +8,9 @@ import ListItemText from "@material-ui/core/ListItemText";
 import Checkbox from "@material-ui/core/Checkbox";
 import IconButton from "@material-ui/core/IconButton";
 import CommentIcon from "@material-ui/icons/Comment";
+import { Agent } from "./types";
 interface AIListProps {
-  name?: string;
+  agents: Agent[];
 }
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -23,7 +24,7 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 const AIList: React.FunctionComponent<AIListProps> = ({
-  name
+  agents
 }: AIListProps): JSX.Element => {
   const classes = useStyles();
   const [checked, setChecked] = React.useState([0]);
@@ -42,32 +43,31 @@ const AIList: React.FunctionComponent<AIListProps> = ({
   };
   return (
     <List className={classes.root}>
-      {[0, 1, 2, 3].map(value => {
-        const labelId = `checkbox-list-label-${value}`;
+      {agents.map(agent => {
+        const labelId = `checkbox-list-label-${agent.id}`;
 
         return (
           <ListItem
-            key={value}
+            key={agent.id}
             role={undefined}
             dense
             button
-            onClick={handleToggle(value)}
+            onClick={handleToggle(agent.id)}
           >
             <ListItemIcon>
               <Checkbox
                 edge="start"
-                checked={checked.indexOf(value) !== -1}
+                checked={checked.indexOf(agent.id) !== -1}
                 tabIndex={-1}
                 disableRipple
                 inputProps={{ "aria-labelledby": labelId }}
               />
             </ListItemIcon>
-            <ListItemText id={labelId} primary={`Line item ${value + 1}`} />
-            <ListItemSecondaryAction>
-              <IconButton edge="end" aria-label="comments">
-                <CommentIcon />
-              </IconButton>
-            </ListItemSecondaryAction>
+            <ListItemText
+              id={labelId}
+              primary={`${agent.name}`}
+              secondary={`${agent.description}`}
+            />
           </ListItem>
         );
       })}
