@@ -3,6 +3,7 @@ import AgentList from "./AgentList";
 import { FEAgent } from "../types";
 import SelectedAgentsTable from "./SelectedAgentsTable";
 import { Grid } from "@material-ui/core";
+import MyRadarChart from "./Charts";
 
 interface ShowCaseGridProps {
   agents: FEAgent[];
@@ -21,7 +22,12 @@ const ShowCaseGrid: React.FunctionComponent<ShowCaseGridProps> = ({
         </Grid>
         <Grid item>
           {selectedAgents.length > 0 && (
-            <SelectedAgentsTable agents={selectedAgents}> </SelectedAgentsTable>
+            <>
+              <SelectedAgentsTable
+                agents={selectedAgents}
+              ></SelectedAgentsTable>
+              <MyRadarChart />
+            </>
           )}
         </Grid>
       </Grid>
