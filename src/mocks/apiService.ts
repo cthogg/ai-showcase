@@ -1,6 +1,8 @@
 // == Fake API Service ==
 
-/** API service to use to complete the project.*/ export class AgentsApi {
+/** API service to use to complete the project.*/
+
+export class AgentsApi {
   listAgents(): Promise<ReadonlyArray<Agent>> {
     return asFallibleAsyncResponse(AGENTS);
   }
@@ -16,11 +18,13 @@
   }
 }
 
+export const { listAgents } = new AgentsApi();
+
 // == Fake API Data ==
 
 type AgentId = number;
 
-interface Agent {
+export interface Agent {
   readonly id: AgentId;
   readonly name: string;
   readonly description: string;
@@ -33,6 +37,7 @@ interface Task {
   readonly category: "memory" | "planning" | "logic";
   readonly score: number;
 }
+let currentId = 1;
 
 /** Fake list of agents. */
 // FIXME: see this tsignore
@@ -66,7 +71,6 @@ const AGENTS: ReadonlyArray<Agent> = [
       { id: "planning_1", name: "Pacman", category: "planning", score: 100 }
     ]
   },
-  ,
   {
     id: nextId(),
     name: "R2D3",
@@ -84,8 +88,6 @@ const AGENTS: ReadonlyArray<Agent> = [
 ];
 
 // == Helper utilities ==
-
-let currentId = 1;
 
 /** Returns a new unique ID at every invocation. */ function nextId() {
   return currentId++;

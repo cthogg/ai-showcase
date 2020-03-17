@@ -30,7 +30,6 @@ export const AGENTS: BEAgent[] = [
       { id: "planning_1", name: "Pacman", category: "planning", score: 100 }
     ]
   },
-  ,
   {
     id: 3,
     name: "R2D3",
