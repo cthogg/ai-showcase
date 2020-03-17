@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import AIList from "./AIList";
-import { FEAgent } from "./types";
+import { FEAgent } from "../types";
 import SelectedAgentsTable from "./SelectedAgentsTable";
 import { Grid } from "@material-ui/core";
 

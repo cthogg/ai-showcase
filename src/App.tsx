@@ -1,6 +1,6 @@
 import React from "react";
-import ApplicationBar from "./ApplicationBar";
-import APIWrapper from "./APIWrapper";
+import ApplicationBar from "./components/ApplicationBar";
+import APIWrapper from "./components/APIWrapper";
 
 function App() {
   return (

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { listAgents } from "./mocks/apiService";
-import { BEAgent, FEAgent } from "./types";
-import { beFeAgentParser } from "./backendFrontendParser";
+import { listAgents } from "../mocks/apiService";
+import { BEAgent, FEAgent } from "../types";
+import { beFeAgentParser } from "../backendFrontendParser";
 import ShowCaseGrid from "./ShowcaseGrid";
 
 const APIWrapper: React.FunctionComponent = (): JSX.Element => {
