@@ -1,16 +1,13 @@
-import React from "react";
-import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
+import Checkbox from "@material-ui/core/Checkbox";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
-import ListItemSecondaryAction from "@material-ui/core/ListItemSecondaryAction";
 import ListItemText from "@material-ui/core/ListItemText";
-import Checkbox from "@material-ui/core/Checkbox";
-import IconButton from "@material-ui/core/IconButton";
-import CommentIcon from "@material-ui/icons/Comment";
-import { BEAgent } from "./types";
+import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
+import React from "react";
+import { FEAgent } from "./types";
 interface AIListProps {
-  agents: BEAgent[];
+  agents: FEAgent[];
 }
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -41,6 +38,16 @@ const AIList: React.FunctionComponent<AIListProps> = ({
 
     setChecked(newChecked);
   };
+
+  const createStatisticsFromAgent = (agent: FEAgent): string => {
+    const categoryString: string = agent.statistics.categories
+      .map(cat => {
+        return `${cat.category}, ${cat.statistics.averageMean}`;
+      })
+      .join("");
+    return categoryString;
+  };
+
   return (
     <List className={classes.root}>
       {agents.map(agent => {
@@ -66,7 +73,9 @@ const AIList: React.FunctionComponent<AIListProps> = ({
             <ListItemText
               id={labelId}
               primary={`${agent.name}`}
-              secondary={`${agent.description}`}
+              secondary={`${agent.description}  ${createStatisticsFromAgent(
+                agent
+              )}`}
             />
           </ListItem>
         );
