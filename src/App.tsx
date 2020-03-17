@@ -1,8 +1,7 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import ApplicationBar from './ApplicationBar';
-import AIList from './AIList';
+import React from "react";
+import "./App.css";
+import ApplicationBar from "./ApplicationBar";
+import AIList from "./AIList";
 
 function App() {
   return (
