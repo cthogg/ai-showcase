@@ -20,7 +20,7 @@ export const findCategoryAverageMeanFromAgent = (
   return averageScore;
 };
 //FIXME: remove ts-ignores
-const allCategories = ["memory", "planning", "logic"];
+export const allCategories = ["memory", "planning", "logic"];
 const createCategoriesFromAgent = (agent: BEAgent): CategoryStatistic[] => {
   return allCategories.map(
     (catName: string): CategoryStatistic => {

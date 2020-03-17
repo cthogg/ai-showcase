@@ -8,7 +8,7 @@ import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 import { FEAgent } from "./types";
-
+import { allCategories } from "./backendFrontendParser";
 const useStyles = makeStyles({
   table: {
     minWidth: 650
@@ -19,7 +19,25 @@ interface SelectedAgentsTableProps {
   agents: FEAgent[];
 }
 
-// TODO: create header categories
+const categoryHeaders = allCategories.map(c => (
+  <TableCell key={c} align="right">
+    {c} Average
+  </TableCell>
+));
+// FIXME: this needs to be repeated when another measure is added
+const categoryAverage = (row: FEAgent, allCategories: string[]) =>
+  allCategories.map(c => {
+    // Find the category
+    const statsForCategory = row.statistics.categories.find(
+      rowc => rowc.category === c
+    );
+    // escapte the category
+    return (
+      <TableCell key={c} align="right">
+        {statsForCategory?.statistics.averageMean}
+      </TableCell>
+    );
+  });
 // TODO: create row categories
 
 const SelectedAgentsTable: React.FunctionComponent<SelectedAgentsTableProps> = ({
@@ -32,7 +50,7 @@ const SelectedAgentsTable: React.FunctionComponent<SelectedAgentsTableProps> = (
         <TableHead>
           <TableRow>
             <TableCell>Name</TableCell>
-            <TableCell align="right">Average</TableCell>
+            {categoryHeaders}
           </TableRow>
         </TableHead>
         <TableBody>
@@ -41,9 +59,7 @@ const SelectedAgentsTable: React.FunctionComponent<SelectedAgentsTableProps> = (
               <TableCell component="th" scope="row">
                 {row.name}
               </TableCell>
-              <TableCell align="right">
-                {row.statistics.categories[0].statistics.averageMean}
-              </TableCell>
+              {categoryAverage(row, allCategories)}
             </TableRow>
           ))}
         </TableBody>
