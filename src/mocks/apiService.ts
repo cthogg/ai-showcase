@@ -4,7 +4,6 @@
 
 export class AgentsApi {
   listAgents(): Promise<ReadonlyArray<Agent>> {
-    console.log("pinged");
     return asFallibleAsyncResponse(AGENTS);
   }
 

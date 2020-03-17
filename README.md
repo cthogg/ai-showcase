@@ -47,7 +47,7 @@ If I had more time I would do the following:
 1. Allow the table to be sorted
 1. Add different visualisations for example bar graphs and radar charts.
 1. Add more thorough testing
-1. Sort out the parts where I added a ts-ignore or TODO. I feel that technical debt is OK sometimes, so long as it is documented.
+1. Sort out the parts where I added a ts-ignore or TODO or FIXME. I feel that technical debt is OK sometimes, so long as it is documented.
 1. Add a loading spinner when the data is loading.
 1. instead of having an alert make the errors popup as a toast or add a React Error Boundary.
 1. Make the list show the performance indicators more clearly.

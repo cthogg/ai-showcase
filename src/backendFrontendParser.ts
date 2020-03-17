@@ -1,10 +1,5 @@
 import { BEAgent, FEAgent, CategoryStatistic } from "./types";
 
-// list all categories
-// for each of these categories find all of the tasks in it
-// average all of these tasks from the categories
-//
-
 // FIXME: convert cateogry names into enums
 export const findCategoryAverageMeanFromAgent = (
   agent: BEAgent,

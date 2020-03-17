@@ -34,7 +34,6 @@ const AIList: React.FunctionComponent<AIListProps> = ({
       const checkedAgents: FEAgent[] = checkedIds
         .filter(c => c !== 0)
         .map(c => {
-          console.log("c", c);
           //@ts-ignore
           const foundAgent: FEAgent = agents.find(a => a.id === c);
           return foundAgent;

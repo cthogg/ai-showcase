@@ -29,7 +29,7 @@ const categoryAverage = (row: FEAgent, allCategories: string[]) =>
   allCategories.map(c => {
     // Find the category
     const statsForCategory = row.statistics.categories.find(
-      rowc => rowc.category === c
+      rowForCategory => rowForCategory.category === c
     );
     // escapte the category
     return (

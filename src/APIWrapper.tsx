@@ -4,12 +4,12 @@ import { BEAgent, FEAgent } from "./types";
 import { beFeAgentParser } from "./backendFrontendParser";
 import ShowCaseGrid from "./ShowcaseGrid";
 
-const TodoWrapper: React.FunctionComponent = (): JSX.Element => {
+const APIWrapper: React.FunctionComponent = (): JSX.Element => {
   const [agents, setAgents] = useState<FEAgent[]>([]);
 
   useEffect(() => {
-    const fetchTodos = async () => {
-      //TODO: add loading spinner
+    const fetchAgents = async () => {
+      // TODO: add loading spinner
       try {
         const result = await listAgents();
         if (result === []) {
@@ -19,11 +19,11 @@ const TodoWrapper: React.FunctionComponent = (): JSX.Element => {
           setAgents(beFeAgentParser(convertedResult));
         }
       } catch (error) {
-        //TODO: make this alert within the ui
+        // TODO: make this alert within the ui
         alert(error);
       }
     };
-    fetchTodos();
+    fetchAgents();
   }, []);
   return (
     <React.Fragment>
@@ -32,4 +32,4 @@ const TodoWrapper: React.FunctionComponent = (): JSX.Element => {
   );
 };
 
-export default TodoWrapper;
+export default APIWrapper;
