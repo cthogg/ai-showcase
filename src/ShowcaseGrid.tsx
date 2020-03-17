@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import AIList from "./AIList";
 import { FEAgent } from "./types";
+import SelectedAgentsTable from "./SelectedAgentsTable";
+import { mockSelectedAgents } from "./mocks/mockSelectedAgents";
 
 interface ShowCaseGridProps {
   agents: FEAgent[];
@@ -10,6 +12,7 @@ const ShowCaseGrid: React.FunctionComponent<ShowCaseGridProps> = ({
   agents
 }: ShowCaseGridProps): JSX.Element => {
   const [selectedAgents, setSelectedAgents] = useState<FEAgent[]>([]);
+  console.log("selectedAgents", selectedAgents);
   const selectedAgentsList = () => {
     if (selectedAgents.length === 0) {
       return <p> nothing selected </p>;
@@ -26,6 +29,9 @@ const ShowCaseGrid: React.FunctionComponent<ShowCaseGridProps> = ({
     <>
       <AIList agents={agents} selectFunction={setSelectedAgents} />
       {selectedAgentsList()}
+      {6 > 0 && (
+        <SelectedAgentsTable agents={mockSelectedAgents}> </SelectedAgentsTable>
+      )}
     </>
   );
 };
